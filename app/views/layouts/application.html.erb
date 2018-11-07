@@ -9,15 +9,68 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <!-- END CSS FIles -->
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
   </head>
 
-  <body>
+  <body class="bg-light">
 
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand navbar-dark bg-primary">
+        <a class="sidebar-toggle mr-3" href="#"><i class="fa fa-bars"></i></a>
+        <a class="navbar-brand" href="#">Sass Hotel Manager</a>
 
-    <!-- YEILD Content -->
-    <%= yield %>
-    <!-- END YEILD Content -->
-  
+        <div class="navbar-collapse collapse">
+            <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item dropdown">
+                    <a href="#" id="dd_user" class="nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Username</a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd_user">
+                        <a href="#" class="dropdown-item">Profile</a>
+                        <a href="#" class="dropdown-item">Logout</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- END Nav Bar -->
+
+    <!-- Sidebar -->
+    <div class="d-flex">
+        <div class="sidebar sidebar-dark bg-dark toggled">
+            <ul class="list-unstyled">
+                <li><a href="#"><i class="fa fa-fw fa-tachometer-alt"></i> Dashboard</a></li>
+                <li>
+                    <a href="#sm_base" data-toggle="collapse">
+                        <i class="fa fa-fw fa-cube"></i> Links
+                    </a>
+                    <ul id="sm_base" class="list-unstyled collapse">
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa fa-fw fa-flag"></i> Link 3</a></li>
+                
+            </ul>
+        </div>
+
+        <!-- Content -->
+        <div class="content p-4">
+          <!-- YEILD Content -->
+          <%= yield %>
+          <!-- END YEILD Content -->
+        </div>
+        <!-- END Content -->
+
+    </div>
+    <!-- END Sidebar -->
+    
 
     <!-- Javascript files -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -25,8 +78,9 @@
 
     <script>
 
+      // jQuery - Document Ready
       $(function() {
-        alert('jQuery and Bootstrap working')
+        
       })
 
     </script>
