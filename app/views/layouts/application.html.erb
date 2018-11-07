@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sass - Hotel - Manager</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <!-- CSS Files -->
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!-- END CSS FIles -->
+
+  </head>
+
+  <body>
+
+
+    <!-- YEILD Content -->
+    <%= yield %>
+    <!-- END YEILD Content -->
+  
+
+    <!-- Javascript files -->
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- END Javascript files -->
+
+    <script>
+
+      $(function() {
+        alert('jQuery and Bootstrap working')
+      })
+
+    </script>
+
+  </body>
+</html>
